@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://cni38gi056w3y"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_uao4p"]
+bounce = 1.0
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_s3vqg"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_uao4p"]
+
+[node name="Physics Bouncing Sphere" type="RigidBody3D"]
+physics_material_override = SubResource("PhysicsMaterial_uao4p")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_s3vqg")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D"]
+mesh = SubResource("SphereMesh_uao4p")
