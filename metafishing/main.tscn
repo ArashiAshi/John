@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cl0euqybbuvkg"]
+[gd_scene load_steps=5 format=3 uid="uid://t245q5rgmfo6"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_7dm0k"]
 radius = 0.3
@@ -35,3 +35,5 @@ shape = SubResource("WorldBoundaryShape3D_7dm0k")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
 mesh = SubResource("PlaneMesh_ig7tw")
+
+[node name="test" type="Node3D" parent="."]
