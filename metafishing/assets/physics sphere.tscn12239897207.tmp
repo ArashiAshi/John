@@ -1,38 +1,18 @@
-[gd_scene load_steps=8 format=3 uid="uid://cni38gi056w3y"]
+[gd_scene load_steps=6 format=3 uid="uid://cni38gi056w3y"]
 
 [ext_resource type="Script" uid="uid://byxbrn7mhh7n4" path="res://assets/physics_sphere.gd" id="1_uao4p"]
 [ext_resource type="AudioStream" uid="uid://bv8njpbp8vksv" path="res://Stone_dig4shifted.ogg" id="2_vg7dt"]
-[ext_resource type="Texture2D" uid="uid://d4cph7qwtbvrl" path="res://assets/Unstable.png" id="2_wirsa"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_uao4p"]
 bounce = 1.0
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_s3vqg"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2fm6n"]
-metallic = 1.0
-metallic_texture = ExtResource("2_wirsa")
-emission_enabled = true
-emission_operator = 1
-emission_texture = ExtResource("2_wirsa")
-normal_enabled = true
-normal_texture = ExtResource("2_wirsa")
-rim_enabled = true
-rim = 0.15
-rim_tint = 0.0
-rim_texture = ExtResource("2_wirsa")
-clearcoat_texture = ExtResource("2_wirsa")
-detail_enabled = true
-detail_mask = ExtResource("2_wirsa")
-detail_normal = ExtResource("2_wirsa")
-
 [sub_resource type="SphereMesh" id="SphereMesh_uao4p"]
-material = SubResource("StandardMaterial3D_2fm6n")
 
 [node name="Physics Bouncing Sphere" type="RigidBody3D"]
 physics_material_override = SubResource("PhysicsMaterial_uao4p")
-contact_monitor = true
-max_contacts_reported = 1000
+script = ExtResource("1_uao4p")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("SphereShape3D_s3vqg")
@@ -42,4 +22,3 @@ mesh = SubResource("SphereMesh_uao4p")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("2_vg7dt")
-script = ExtResource("1_uao4p")
